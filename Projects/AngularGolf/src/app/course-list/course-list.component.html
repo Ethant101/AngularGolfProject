@@ -1,0 +1,24 @@
+
+<!-- <mat-card *ngFor="let course of model">
+    <mat-card-title>{{ course.name }}</mat-card-title>
+    <img mat-card-image [src]="course.image" [alt]="course.name" width="20%px">
+    <mat-card-content> {{ course.id }} </mat-card-content>
+</mat-card> -->
+
+<!-- [ngStyle]="{background: 'url(' + course.image + ')'}"  -->
+
+<mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let course of model">
+        <button mat-raised-button color="primary" 
+                style="cursor:pointer; padding:20px; margin:10px;"
+                [routerLink]="['/course', course.id]"
+                >
+                {{ course.name }}
+        </button>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+
+
+
